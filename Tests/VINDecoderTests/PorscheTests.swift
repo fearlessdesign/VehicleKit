@@ -7,6 +7,7 @@ final class PorscheTests: XCTestCase {
   // MARK: - European
 
   func testEuropeanVINs() {            //  12345678901234567
+    XCTAssertEqual(VINDecoder.decode(vin: "WP0ZZZY17PSA41234"), VINTraits(descriptor: .porsche(.taycan),    engineType: .electric,    isValid: true, year: 2023))
     XCTAssertEqual(VINDecoder.decode(vin: "WP1ZZZ9YZLDA31234"), VINTraits(descriptor: .porsche(.cayenne),   engineType: .combustion,  isValid: true, year: 2020))
     XCTAssertEqual(VINDecoder.decode(vin: "WP0ZZZ99ZKS121234"), VINTraits(descriptor: .porsche(.p911),      engineType: .combustion,  isValid: true, year: 2019))
     XCTAssertEqual(VINDecoder.decode(vin: "WP0ZZZ98ZHS231234"), VINTraits(descriptor: .porsche(.p718),      engineType: .combustion,  isValid: true, year: 2017))
@@ -27,6 +28,7 @@ final class PorscheTests: XCTestCase {
   // MARK: - North American
 
   func testNorthAmericanVINs() {       //  12345678901234567
+    XCTAssertEqual(VINDecoder.decode(vin: "WP1AA2AY3PDA07429"), VINTraits(descriptor: .porsche(.cayenne),   engineType: .combustion,  isValid: true, year: 2023))
     XCTAssertEqual(VINDecoder.decode(vin: "WP1AE2AY4NDA26508"), VINTraits(descriptor: .porsche(.cayenne),   engineType: .hybrid,      isValid: true, year: 2022))
     XCTAssertEqual(VINDecoder.decode(vin: "WP0AA2Y10NSA11234"), VINTraits(descriptor: .porsche(.taycan),    engineType: .electric,    isValid: true, year: 2022))
     XCTAssertEqual(VINDecoder.decode(vin: "WP1AE2AY6MDA24080"), VINTraits(descriptor: .porsche(.cayenne),   engineType: .hybrid,      isValid: true, year: 2021))

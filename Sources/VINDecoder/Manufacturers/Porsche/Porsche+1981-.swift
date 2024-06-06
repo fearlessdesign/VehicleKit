@@ -3,6 +3,7 @@ import Foundation
 import VehicleDescriptor
 
 extension VINDecoder.Porsche {
+  /// https://www.stuttcars.com/porsche-data/porsche-vin-decoder/
   /// https://www.stuttcars.com/porsche-911-1965-1989-vin-numbers/
   /// https://web.archive.org/web/20160525073330/https://www.stoddard.com/Werkstatte/cat/TechnicalArticles/post/bodyengineid/
   /// https://www.autoatlanta.com/porsche-parts/porsche-models.php
@@ -22,13 +23,12 @@ extension VINDecoder.Porsche {
 
     switch bodyEngineAirbags {
     case "ZZZ":  // European VIN
-      guard let modelPart1 = porscheGermanyVIN.scanCharacters(exactLength: 2),        // 7, 8
-            let filler = porscheGermanyVIN.scanCharacter(),                           // 9
-            let modelYear = porscheGermanyVIN.scanCharacter(),                        // 10
+      guard let modelPart1 = porscheGermanyVIN.scanCharacters(exactLength: 2),        // 7, 8  Model, part 1
+            let _ = porscheGermanyVIN.scanCharacter(),                                // 9     Filler
+            let modelYear = porscheGermanyVIN.scanCharacter(),                        // 10    Year
             let _ = porscheGermanyVIN.scanCharacter(),                                // 11    Factory
-            let modelPart2 = porscheGermanyVIN.scanCharacter(),                       // 12
-            let _ = porscheGermanyVIN.scanInt(),                                      // 13-17 ID
-            filler == "Z" else {
+            let modelPart2 = porscheGermanyVIN.scanCharacter(),                       // 12    Model, part 2
+            let _ = porscheGermanyVIN.scanInt() else {                                // 13-17 ID
         return nil
       }
       let yearCode = String(modelYear)
