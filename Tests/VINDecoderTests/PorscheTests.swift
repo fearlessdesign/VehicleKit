@@ -7,6 +7,7 @@ final class PorscheTests: XCTestCase {
   // MARK: - European
 
   func testEuropeanVINs() {            //  12345678901234567
+    XCTAssertEqual(VINDecoder.decode(vin: "WPOZZZY15PSA01234"), VINTraits(descriptor: .porsche(.taycan),    engineType: .electric,    isValid: true, year: 2023))
     XCTAssertEqual(VINDecoder.decode(vin: "WP0ZZZY17PSA41234"), VINTraits(descriptor: .porsche(.taycan),    engineType: .electric,    isValid: true, year: 2023))
     XCTAssertEqual(VINDecoder.decode(vin: "WP1ZZZ9YZLDA31234"), VINTraits(descriptor: .porsche(.cayenne),   engineType: .combustion,  isValid: true, year: 2020))
     XCTAssertEqual(VINDecoder.decode(vin: "WP0ZZZ99ZKS121234"), VINTraits(descriptor: .porsche(.p911),      engineType: .combustion,  isValid: true, year: 2019))
