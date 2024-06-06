@@ -11,6 +11,7 @@ extension String {
 public enum VehicleDescriptor: Codable, Hashable, Sendable {
   case bmw(BMWModel)
   case ford(FordModel)
+  case mg(MGModel)
   case nissan(NissanModel)
   case porsche(PorscheModel)
   case tesla(TeslaModel)
@@ -75,6 +76,7 @@ public enum VehicleDescriptor: Codable, Hashable, Sendable {
     switch self {
     case .bmw:      return "BMW"
     case .ford:     return "Ford"
+    case .mg:       return "MG"
     case .nissan:   return "Nissan"
     case .porsche:  return "Porsche"
     case .tesla:    return "Tesla"
@@ -91,6 +93,7 @@ public enum VehicleDescriptor: Codable, Hashable, Sendable {
     switch self {
     case .bmw(let model):       return model.localizedString
     case .ford(let model):      return model.localizedString
+    case .mg(let model):        return model.localizedString
     case .nissan(let model):    return model.localizedString
     case .porsche(let model):   return model.localizedString
     case .tesla(let model):     return model.localizedString
