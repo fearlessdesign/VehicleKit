@@ -28,6 +28,9 @@ public struct VINDecoder {
     if let traits = MG.decode(vin: vin) {
       return traits
     }
+    if let traits = Polestar.decode(vin: vin) {
+      return traits
+    }
     return nil
   }
 }
