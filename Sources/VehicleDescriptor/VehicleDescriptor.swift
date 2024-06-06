@@ -111,6 +111,8 @@ public enum VehicleDescriptor: Codable, Hashable, Sendable {
           model != unknownIdentifier else {
       return nil
     }
-    return "\(make)-\(model)".replacingOccurrences(of: " ", with: "-")
+    return "\(make)-\(model)"
+      .filter { $0.isNumber || $0.isLetter || $0.isWhitespace || $0 == "-" }
+      .replacingOccurrences(of: " ", with: "-")
   }
 }
