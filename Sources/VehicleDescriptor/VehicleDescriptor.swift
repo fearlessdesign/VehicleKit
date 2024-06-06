@@ -12,6 +12,7 @@ public enum VehicleDescriptor: Codable, Hashable, Sendable {
   case bmw(BMWModel)
   case ford(FordModel)
   case hyundai(HyundaiModel)
+  case kia(KiaModel)
   case mg(MGModel)
   case nissan(NissanModel)
   case porsche(PorscheModel)
@@ -43,6 +44,12 @@ public enum VehicleDescriptor: Codable, Hashable, Sendable {
         self = .hyundai(model)
       } else {
         self = .custom(make: "Hyundai", model: originalModel)
+      }
+    case "kia":
+      if let model = KiaModel.allCases.first(where: { $0.localizedString.standardized == model }) {
+        self = .kia(model)
+      } else {
+        self = .custom(make: "Kia", model: originalModel)
       }
     case "mg":
       if let model = MGModel.allCases.first(where: { $0.localizedString.standardized == model }) {
@@ -90,6 +97,7 @@ public enum VehicleDescriptor: Codable, Hashable, Sendable {
     case .bmw:      return "BMW"
     case .ford:     return "Ford"
     case .hyundai:  return "Hyundai"
+    case .kia:      return "Kia"
     case .mg:       return "MG"
     case .nissan:   return "Nissan"
     case .porsche:  return "Porsche"
@@ -108,6 +116,7 @@ public enum VehicleDescriptor: Codable, Hashable, Sendable {
     case .bmw(let model):       return model.localizedString
     case .ford(let model):      return model.localizedString
     case .hyundai(let model):   return model.localizedString
+    case .kia(let model):       return model.localizedString
     case .mg(let model):        return model.localizedString
     case .nissan(let model):    return model.localizedString
     case .porsche(let model):   return model.localizedString

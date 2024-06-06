@@ -19,6 +19,9 @@ public struct VINDecoder {
     if let traits = Hyundai.decode(vin: vin) {
       return traits
     }
+    if let traits = Kia.decode(vin: vin) {
+      return traits
+    }
     if let traits = Volvo.decode(vin: vin) {
       return traits
     }
