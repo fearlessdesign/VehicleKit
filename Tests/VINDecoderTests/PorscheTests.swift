@@ -32,6 +32,7 @@ final class PorscheTests: XCTestCase {
     XCTAssertEqual(VINDecoder.decode(vin: "WP1AA2AY3PDA07429"), VINTraits(descriptor: .porsche(.cayenne),   engineType: .combustion,  isValid: true, year: 2023))
     XCTAssertEqual(VINDecoder.decode(vin: "WP1AE2AY4NDA26508"), VINTraits(descriptor: .porsche(.cayenne),   engineType: .hybrid,      isValid: true, year: 2022))
     XCTAssertEqual(VINDecoder.decode(vin: "WP0AA2Y10NSA11234"), VINTraits(descriptor: .porsche(.taycan),    engineType: .electric,    isValid: true, year: 2022))
+    XCTAssertEqual(VINDecoder.decode(vin: "WP0AA2Y14PSA00000"), VINTraits(descriptor: .porsche(.taycan),    engineType: .electric,    isValid: true, year: 2023))
     XCTAssertEqual(VINDecoder.decode(vin: "WP1AE2AY6MDA24080"), VINTraits(descriptor: .porsche(.cayenne),   engineType: .hybrid,      isValid: true, year: 2021))
     XCTAssertEqual(VINDecoder.decode(vin: "WP1AE2AY0LDA22260"), VINTraits(descriptor: .porsche(.cayenne),   engineType: .hybrid,      isValid: true, year: 2020))
     XCTAssertEqual(VINDecoder.decode(vin: "WP1AA2AY9LDA09972"), VINTraits(descriptor: .porsche(.cayenne),   engineType: .combustion,  isValid: true, year: 2020))

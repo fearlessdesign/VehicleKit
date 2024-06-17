@@ -55,7 +55,7 @@ extension VINDecoder.Tesla {
       return nil
     }
 
-    let year = VINDecoder.NorthAmerica.yearFromCode(yearCode, positionSevenCode: fuelType)
+    let year = VINDecoder.NorthAmerica.yearFromCode(yearCode, is1980_2009: fuelType.isNumber)
     let checksumCode = VINDecoder.NorthAmerica.checksumCode(vin)
 
     if identificationSeries.isNumber,

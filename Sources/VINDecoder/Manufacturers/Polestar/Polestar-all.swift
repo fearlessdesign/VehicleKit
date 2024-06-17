@@ -22,7 +22,7 @@ extension VINDecoder.Polestar {
 
     let yearCode = vin[vin.index(vin.startIndex, offsetBy: 9)]
     let positionSevenCode = vin[vin.index(vin.startIndex, offsetBy: 6)]
-    guard let year = VINDecoder.NorthAmerica.yearFromCode(yearCode, positionSevenCode: positionSevenCode) else {
+    guard let year = VINDecoder.NorthAmerica.yearFromCode(yearCode, is1980_2009: positionSevenCode.isNumber) else {
       return nil
     }
     guard let _ = scanner.scanCharacters(exactLength: 2),     // 4-5   Engine version

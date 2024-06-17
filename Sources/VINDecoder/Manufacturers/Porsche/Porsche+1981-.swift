@@ -151,7 +151,7 @@ extension VINDecoder.Porsche {
       }
 
       let model = String(modelPart1) + String(modelPart2)
-      let year = VINDecoder.NorthAmerica.yearFromCode(modelYear, positionSevenCode: prePost2010)
+      let year = VINDecoder.NorthAmerica.yearFromCode(modelYear, is1980_2009: prePost2010.isNumber)
 
       var engineType: VINTraits.EngineType = .combustion
       var descriptor: VehicleDescriptor?

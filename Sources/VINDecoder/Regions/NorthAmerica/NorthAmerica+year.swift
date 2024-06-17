@@ -1,8 +1,8 @@
 import Foundation
 
 extension VINDecoder.NorthAmerica {
-  static func yearFromCode(_ code: Character, positionSevenCode: Character) -> Int? {
-    if positionSevenCode.isNumber {
+  static func yearFromCode(_ code: Character, is1980_2009: Bool) -> Int? {
+    if is1980_2009 {
       return yearToYearCode1980_2009[code]
     } else {
       return yearToYearCode2010_2039[code]
