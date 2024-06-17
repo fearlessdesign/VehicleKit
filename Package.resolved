@@ -1,6 +1,15 @@
 {
   "pins" : [
     {
+      "identity" : "stringscannerkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/fearlessdesign/StringScannerKit.git",
+      "state" : {
+        "revision" : "4201e9e7c3b2a0981bdb40126328211db1bd4691",
+        "version" : "0.0.1"
+      }
+    },
+    {
       "identity" : "swift-docc-plugin",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-docc-plugin",

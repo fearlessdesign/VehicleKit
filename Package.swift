@@ -6,7 +6,7 @@ import PackageDescription
 
 var dependencies: [Package.Dependency] = [
   .package(url: "https://github.com/apple/swift-docc-plugin", from: "1.3.0"),
-  .package(url: "https://github.com/fearlessdesign/StringScannerKit.git", from: "1.0.4"),
+  .package(url: "https://github.com/fearlessdesign/StringScannerKit.git", from: "0.0.1"),
 ]
 
 let package = Package(
